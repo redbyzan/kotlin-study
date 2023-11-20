@@ -1,5 +1,8 @@
 package coroutines.chapter3
 
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlin.coroutines.Continuation
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
@@ -12,11 +15,14 @@ suspend fun suspendAndSetContinuation() {
   }
 }
 
-suspend fun main() {
+suspend fun main() = coroutineScope {
   println("Before")
 
-  suspendAndSetContinuation()
-  continuation?.resume(Unit)
+  launch {
+    delay(1000)
+    continuation?.resume(Unit)
+  }
 
+  suspendAndSetContinuation()
   println("After")
 }
