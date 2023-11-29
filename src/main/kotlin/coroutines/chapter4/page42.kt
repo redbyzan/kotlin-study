@@ -1,19 +1,18 @@
 package coroutines.chapter4
 
-import kotlinx.coroutines.delay
 import kotlin.coroutines.Continuation
 import kotlin.coroutines.CoroutineContext
 
 const val COROUTINE_SUSPENDED = "foo"
 
-suspend fun myFunction() {
-  println("Before")
-  var counter = 0
-  delay(1000) // 중단함수
-  counter++
-  println("Counter: $counter")
-  println("After")
-}
+//suspend fun myFunction() {
+//  println("Before")
+//  var counter = 0
+//  delay(1000) // 중단함수
+//  counter++
+//  println("Counter: $counter")
+//  println("After")
+//}
 
 fun myFunction(continuation: Continuation<Unit>): Any {
   val continuation: MyFunctionContinuation =
