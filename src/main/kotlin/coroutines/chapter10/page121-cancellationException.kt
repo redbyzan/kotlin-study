@@ -1,4 +1,4 @@
-package coroutines.cahpter10
+package coroutines.chapter10
 
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.coroutineScope
